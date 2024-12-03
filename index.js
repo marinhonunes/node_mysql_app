@@ -31,6 +31,6 @@ app.get('/musicas', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
+app.listen(3000, '0.0.0.0', () => {
+    console.log(`Servidor rodando na porta 3000`);
 });
