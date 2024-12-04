@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
@@ -9,9 +10,9 @@ const connection = mysql.createConnection({
     user: 'usuario_node', 
     password: 'senha123',
     database: 'atividadefinal',
-    port: 3306
 });
 
+app.use(cors());
 
 connection.connect(function(err) {
     if (err) {
@@ -31,6 +32,6 @@ app.get('/musicas', (req, res) => {
     });
 });
 
-app.listen(3000, '0.0.0.0', () => {
+app.listen(port,() => {
     console.log(`Servidor rodando na porta 3000`);
 });
